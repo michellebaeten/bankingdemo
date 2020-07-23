@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>48.0</apiVersion>
+    <description>Create User On Load</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Create User On Load</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="userDetails" type="apex://ApplyFlowInput" label="User Details" description="details for the user to create"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

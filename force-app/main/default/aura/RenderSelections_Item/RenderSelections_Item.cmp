@@ -1,0 +1,16 @@
+<!--
+ - Created by apaterson on 15/06/2020.
+ -->
+
+<aura:component description="RenderSelections_Item">
+    <aura:attribute name="option" type="String"/>
+    <aura:attribute name="selectedOptions" type="String[]"/>
+    <aura:attribute name="multiSelect" type="Boolean" default="false"/>
+    <aura:attribute name="isSelected" type="Boolean" default="false"/>
+
+    <aura:handler name="change" value="{!v.selectedOptions}" action="{!c.selectedOptionsChange}"/>
+
+    <div class="slds-col">
+        <div class="{!v.isSelected==true ? 'slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small slds-button_brand': 'slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small'}" onclick="{!c.selectOption}">{!v.option}</div>
+    </div>
+</aura:component>

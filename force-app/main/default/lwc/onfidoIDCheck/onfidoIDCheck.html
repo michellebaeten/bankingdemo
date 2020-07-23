@@ -1,0 +1,28 @@
+<!--
+ - Created by apaterson on 16/06/2020.
+ -->
+
+<!-- Onfido Id Check -->
+<template>
+
+    <div class="slds-box slds-theme_default slds-p-around_medium slds-m-around_medium">
+
+        <template if:true={completed}>
+            <div class="slds-text-heading_medium">Identity Verification Completed</div>
+
+        </template>
+        <template if:false={completed}>
+        <div class="slds-text-heading_medium">Identity Verification</div>
+        <div style="padding-top:50px">To open a deposit account, we will need to verify your identity</div>
+        <div>It will only take a couple of minutes</div>
+        <div style="padding-top:50px">
+
+            <lightning-button label="Verify Identity" variant="brand" onclick={markIDAsDone}></lightning-button>
+        </div>
+
+        </template>
+    </div>
+    <template if:true={error}>
+        {error}
+    </template>
+</template>

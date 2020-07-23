@@ -1,0 +1,27 @@
+<!--
+ - Created by apaterson on 15/06/2020.
+ -->
+<aura:component description="RenderSelections"  >
+    <aura:attribute name="sObject" type="String"/>
+    <aura:attribute name="fieldName" type="String"/>
+    <aura:attribute name="multiSelect" type="Boolean" default="false"/>
+    <aura:attribute name="title" type="String"/>
+    <aura:attribute name="options" type="Object"/>
+    <aura:attribute name="selectedOptions" type="String[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-text-title_caps slds-p-bottom_xx-small">{!v.title}</div>
+
+
+    <div class="slds-grid slds-wrap">
+
+
+        <aura:iteration items="{!v.options}" var="option">
+            <c:RenderSelections_Item option="{!option}" selectedOptions="{!v.selectedOptions}" multiSelect="{!v.multiSelect}"/>
+
+        </aura:iteration>
+    </div>
+
+
+    >
+</aura:component>

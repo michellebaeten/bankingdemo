@@ -1,0 +1,29 @@
+<!--
+ - Created by apaterson on 02/06/2020.
+ -->
+
+<!-- Progress Bar -->
+<template>
+
+    <lightning-progress-indicator current-step={currentStage} type="path" variant="base">
+        <template for:each={activeStages} for:item="step">
+            <lightning-progress-step label={step} value={step} key={step}></lightning-progress-step>
+        </template>
+    </lightning-progress-indicator>
+    <div class="with-underline">{title}</div>
+    <template if:true={shouldIShowInfo}>
+    <div class="slds-p-around_small slds-border_bottom slds-m-bottom_medium">
+        <div class="slds-media slds-media_center">
+            <div class="slds-media__figure">
+
+                <lightning-icon icon-name="utility:info" size="small"></lightning-icon>
+
+            </div>
+            <div class="slds-media__body">
+                <p>{description}</p>
+            </div>
+        </div>
+    </div>
+    </template>
+
+</template>

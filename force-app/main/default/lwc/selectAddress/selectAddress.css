@@ -1,0 +1,14 @@
+/**
+ * Created by apaterson on 01/06/2020.
+ */
+.myfont , .myfont > label {
+    font-size:1.2em !important;
+}
+
+.slds-form-element__label {
+    font-size:1.2em !important;
+}
+
+.slds-form-element {
+    font-size:1.2em !important;
+}

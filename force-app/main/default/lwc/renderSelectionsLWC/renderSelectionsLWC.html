@@ -1,0 +1,33 @@
+<!--
+ - Created by apaterson on 15/06/2020.
+ -->
+
+<!-- Render Selections Lwc -->
+<template>
+
+    <div class="slds-text-title_caps slds-p-bottom_xx-small">{title}</div>
+
+
+    <div class="slds-grid slds-wrap">
+
+<template for:each={options} for:item="option">
+
+    <div class="slds-col" key={option}>
+        <template if:false={option.isSelected}>
+            <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small" onclick={selectOption} data-id={option.id}><a>{option.label}</a></div>
+
+        </template>
+        <template if:true={option.isSelected}>
+            <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small slds-button_brand" onclick={deselectOption} data-id={option.id}><a>{option.label}</a></div>
+
+
+        </template>
+      </div>
+</template>
+
+    </div>
+
+    <template if:true={error}>
+        {error}
+    </template>
+</template>

@@ -1,0 +1,69 @@
+<!--
+ - Created by apaterson on 01/06/2020.
+ -->
+
+<!-- Select Address -->
+<template>
+<div style="padding: 0 .25rem;">
+
+    <template if:true={shouldIShowField}>
+
+
+
+
+    <template if:false={shouldIShowManualAddress}>
+
+
+    <lightning-input
+            type="search"
+            onchange={handleKeyChange}
+            class="slds-m-bottom_small myfont"
+            label="Find Address" required value={searchKey} autocomplete="off"
+
+    ></lightning-input>
+    <template if:true={shouldIShowResults}>
+        Output results
+        <template for:each={data.items} for:item="item">
+            <c-select-address-item onselectaddress={handleSelectAddress} key={item.id} item={item}></c-select-address-item>
+        </template>
+    </template>
+
+    <template if:true={error}>
+        {error}
+    </template>
+        <div if:true={showValidMessage} class="">
+            <div class="slds-media slds-media_center">
+                <div class="slds-media__figure">
+                    <lightning-icon icon-name="utility:success" variant="success" size="xx-small"></lightning-icon>
+                </div>
+                <div class="slds-media__body">
+                    <p class="slds-text-color_success">Address Selected </p>  </div>
+            </div>
+        </div>
+<div class="slds-text-link" onclick={showManualAddressEntry}><a>Manually Enter Address</a></div>
+
+    </template>
+    <template if:true={shouldIShowManualAddress}>
+     <lightning-input required label="Address Line 1" name="addressLine1" value={addressLine1}></lightning-input>
+        <lightning-input label="Address Line 2" name="addressLine2" value={addressLine2}></lightning-input>
+        <lightning-input required label="City" name="city" value={city}></lightning-input>
+        <lightning-input label="State/County" name="state" value={state}></lightning-input>
+        <lightning-input required label="Postcode" name="zip" value={zip}></lightning-input>
+        <lightning-input label="Country" name="country" value={country}></lightning-input>
+
+        <template if:true={error}>
+            {error}
+        </template>
+    </template>
+
+    </template>
+
+    <template if:false={shouldIShowField}>
+
+        <lightning-input
+                type="search"
+                class="slds-m-bottom_small myfont"
+                label="Find Address"  value={searchKey} autocomplete="off"  placeholder="Select Country First" ></lightning-input>
+    </template>
+</div>
+</template>

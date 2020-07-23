@@ -1,0 +1,15 @@
+/**
+ * Created by apaterson on 02/06/2020.
+ */
+.with-underline {
+    color: rgb(191, 167, 124);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    border-bottom: 1px solid hsla(84,3%,65%,.5);
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    padding-top:24px;
+}
